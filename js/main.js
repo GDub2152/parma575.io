@@ -36,6 +36,21 @@ document.addEventListener("DOMContentLoaded", () => {
     `&wind_speed_unit=mph` +
     `&pressure_unit=inhg`;
 
+  document.getElementById("weatherTemp").textContent =
+    Math.round(current.temperature_2m) + "°F";
+
+document.getElementById("feelsLike").textContent =
+    Math.round(current.apparent_temperature) + "°F";
+
+document.getElementById("humidity").textContent =
+    current.relative_humidity_2m + "%";
+
+document.getElementById("wind").textContent =
+    Math.round(current.wind_speed_10m) + " mph";
+
+document.getElementById("barometer").textContent =
+    current.surface_pressure.toFixed(2) + " inHg";
+
   const lightbox = document.querySelector(".lightbox");
   const lightboxImg = document.querySelector(".lightbox img");
   document.querySelectorAll(".gallery img").forEach(img => {
